@@ -1,0 +1,120 @@
+﻿Logic Point 1/Inventory Limits 
+
+
+Boundary Input                                       Why its a boundary input
+0 items
+	This tests the Lowest possible value this can have. The lowest amount of stuff a person can hold is nothing.
+	2.0 Items 
+	This tests the Highest possible value this can hold, One item in each hand so 2 Items total. 
+	-1.0 Items 
+	This tests to make sure this CANNOT be a taken value since someone cannot hold -1 items in their hands. 
+	2.5 Items 
+	This tests to make sure the limit for the two hands is only 2. In the game we don't want the player holding too many things to make the game easier.
+	
+
+
+
+Test input data
+	Expected output
+	-1
+	Prevented
+	0
+	Allowed
+	1
+	Allowed
+	1.5
+	Prevented 
+	2
+	Allowed
+	3
+	Prevented
+	
+
+“Which logic point feels most fragile?”
+The point that feels most fragile is the 1.5 input because no other data type is a float.
+“What will I need to watch out for when coding this?”
+ You will need to be sure that each data type is rounded and all types are integers. 
+“Which boundary case surprised me?”
+The  -1 boundary surprised me.
+Logic Point 2/Drink oz Limits 
+Lower Limit — 0.0 oz
+Upper Limit — 24.0 oz
+Just Below Lower — -0.1 oz
+Just Above Upper —  24.1 oz
+
+
+Boundary Input                                       Why its a boundary input
+0.0 oz 
+	This is the lowest amount of liquid a cup should accept.
+	24.0 oz
+	This is the highest possible amount of liquid a cup should accept.
+	-0.1 oz
+	This tests if an amount lower than the lowest accept amount will be accepted, this value should not be accepted.
+	24.1 oz
+	This tests just above the max value this should hold, this value shouldn't be accepted. 
+	
+
+“Which logic point feels most fragile?”
+The Point that feels most fragile is the -1 input because it is negative
+“What will I need to watch out for when coding this?”
+You will need to watch out for when a drink a user over makes liquid or the cup spills
+“Which boundary case surprised me?”
+The  -0.1 boundary surprised me.
+
+
+Test input data
+	Expected output
+	0
+	Allowed
+	2
+	Allowed
+	3
+	Allowed
+	20
+	Allowed
+	24
+	Allowed
+	26
+	Prevented
+	-1
+	Prevented
+	
+
+Logic Point 3/Random Guest orders 
+Lower Limit — 1 item
+Upper Limit —  5 items
+Just Below Lower — -1 items
+Just Above Upper — 6 items
+Boundary Input                                       Why its a boundary input
+I Item
+	This is the minimum amount of items a guest should be able to order. 
+	5 Items
+	This is the Maximum amount of items a guest should be able to order. 
+	-1 Items
+	This value is less than the minimum value and should not be an accepted value.
+	6 Items 
+	This value should not be accepted because iTs above the max amount of items a guest should be able to order. 
+	
+
+
+
+Test input data
+	Expected output
+	-1
+	Prevented
+	1
+	Allowed
+	3
+	Allowed
+	5
+	Allowed
+	6
+	Prevented
+	7
+	Prevented
+	“Which logic point feels most fragile?”
+The point that feels most fragile is the -1 input because it is negative.
+“What will I need to watch out for when coding this?”
+ You will need to be sure that each data type is rounded and all types are positive. 
+“Which boundary case surprised me?”
+The  -1 boundary surprised me.
